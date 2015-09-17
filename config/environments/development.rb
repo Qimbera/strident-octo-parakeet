@@ -29,7 +29,13 @@ Rails.application.configure do
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
+
+  # Required for Heroku
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   config.assets.digest = true
+
+
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
